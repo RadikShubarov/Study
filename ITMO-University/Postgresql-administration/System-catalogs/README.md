@@ -1,7 +1,7 @@
 # TASK
 
-![](images/task.png)
+![](images/task.jpg)
 
 # RESULT
 
-![](images/result.png)
+![](images/result.jpg)
