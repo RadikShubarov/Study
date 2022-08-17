@@ -1,0 +1,13 @@
+---
+- name: install zabbix on servers playbook
+  hosts: db_servers
+  become: true
+  tasks:
+  - name: install zabbix-agent
+    apt:
+     name: zabbix-agent
+     state: latest
+  - name: edit ip of host server
+    lineinfile: dest=/etc/zabbix/zabbix_agentd.conf regexp='Server=127.0.0.1' l>
+  - name: restart zabbix-agent
+    shell: systemctl restart zabbix-agent
