@@ -2,9 +2,7 @@
 
 ### Schema
 
-Nodes OS: Ubuntu 20.04
-
-![](Images/first.jpg)
+![](Images/IaC_1.jpg)
 
 ### Description
 Install Ansible, Nginx and Zabbix on Master Mode
