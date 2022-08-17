@@ -193,12 +193,6 @@ tests/tests.cpp:5: SUCCESS: CHECK( 4 == 4 ) is correct!
 [doctest] Status: SUCCESS!
 ```
 
-# Publish Results
- - In this repository, you need to develop in the development branch
- - After you decide that the task is ready, you need to create a merge request in the master branch. You need to add one of the course teachers to reviewers
- - Further communication, code review, testing will take place through this merge request
- - All corrections of comments should go through one merge request. **No need to create separate merge requests after each fix.**
- - After the merge request is approved and merged in the master, the task is considered completed
 
 # Pipeline
 After creating a merge request, a pipeline will appear in your branch consisting of 4 stages **build**, **builtin-test**, **tidy**, **test**.
