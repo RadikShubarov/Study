@@ -1,14 +1,14 @@
 # Task
 
-Construction of Nondeterministic finite automaton by regex:
+### Construction of Nondeterministic finite automaton by regex:
 
 ![](Screenshots/regex.jpg)
 
-Constructio Deterministic finite automaton by Nondeterministic finite automaton
+### Constructio Deterministic finite automaton by Nondeterministic finite automaton
 
-Minimize Deterministic finite automaton
+### Minimize Deterministic finite automaton
 
-Write the programm
+### [Write the programm](src/main/java)
 
 ### RESULT of Programm 
 
