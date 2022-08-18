@@ -12,7 +12,7 @@
 
 ![](Screenshots/matrix.jpg)
 
-### [Software implementation of the recognizer](src/main/java) 
+### [Software implementation of the recognizer](src/main/java/Main.java) 
 
 ### Result of programm
 
