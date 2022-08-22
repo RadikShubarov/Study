@@ -16,10 +16,10 @@
 
 # Self study
 
-### (DevOps practices)[Self-study/DevOps]
+### [DevOps practices](Self-study/DevOps)
 
-### (Bash scripts)[Self-study/Bash-Scripts]
+### [Bash scripts](Self-study/Bash-Scripts)
 
-### (Data structures and algorithms)[Self-study/Data-structures-and-algorithms]
+### [Data structures and algorithms](Self-study/Data-structures-and-algorithms)
 
-### (Simple equalizer)[Self-study/Simple-equalizer]
+### [Simple equalizer](Self-study/Simple-equalizer)
