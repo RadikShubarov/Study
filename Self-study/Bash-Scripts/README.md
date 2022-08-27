@@ -10,6 +10,8 @@
 
 ### [Read string until press "q" button](read_str_until_press_q.sh)
 
+### [Age groups](age_group.sh)
+
 ### [Read numbs until even numb was](read_until_even_numb.sh)
 
 ### [Compare two strings](two_string_compare.sh)
