@@ -1,0 +1,67 @@
+---
+- name: Deploy sqlite3
+  hosts: 127.0.0.1
+  become: true
+  tasks:
+    - name: Install docker from-playbook
+      include_tasks: playbook_install_docker.yml
+
+    - name: Create sqlite workdir
+      ansible.builtin.file:
+        path: /home/sqlite
+        state: directory
+        mode: '0755'
+
+    - name: Download-sqlite3-soureses
+      ansible.builtin.get_url:
+        url: https://www.sqlite.org/2018/sqlite-amalgamation-3260000.zip
+        dest: /home/sqlite
+        mode: '0755'
+
+    - name: Unzip-soureses
+      ansible.builtin.shell: unzip sqlite-amalgamation-3260000
+      args:
+        chdir: /home/sqlite
+
+    - name: Create-cmake-file
+      copy:
+        dest: "/home/sqlite/sqlite-amalgamation-3260000/CMakeLists.txt"
+        content: |
+          cmake_minimum_required(VERSION 3.18.4)
+          project(sqlite3)
+          set(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}./)
+          file(GLOB CPPS "*.c")
+          add_definitions(-Wall -O2 -DSQLITE_THREADSAFE=0 -DSQLITE_OMIT_LOAD_EXTENSION)
+          add_executable(${PROJECT_NAME} ${CPPS})
+          target_link_libraries(${PROJECT_NAME})
+
+    - name: Execute-cmake
+      ansible.builtin.shell: cmake CMakeLists.txt
+      args:
+        chdir: /home/sqlite/sqlite-amalgamation-3260000
+
+    - name: Tar-all-to-archive
+      ansible.builtin.shell: tar czf sqlite.tar /home/sqlite/sqlite-amalgamation-3260000
+      args:
+        chdir: /home/sqlite
+
+    - name: Create-docker-image-sqlite
+      copy:
+        dest: "/home/sqlite/Dockerfile"
+        content: |
+          FROM debian:buster-slim
+          RUN apt update -y
+          RUN apt install -y gcc
+          WORKDIR = /sqliteapp
+          ADD sqlite.tar .
+
+    - name: build-container-image
+      command: docker build -t sqlite .
+      args:
+        chdir: /home/sqlite
+
+    - name: Run container
+      command: docker run --name sharesqlite --tty -d sqlite
+
+    - name: Create-shared-lib
+      command: docker exec sharesqlite bash -c "cd home/sqlite/sqlite-amalgamation-3260000; make; gcc -c -Wall -Werror -fpic *.c; gcc -shared -o sqlite3.so sqlite3.o"
