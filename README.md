@@ -10,6 +10,8 @@
 
 ### [Network topology](ITMO-University/Network-topology)
 
+### [Information security](ITMO-University/Information-security)
+
 ### [Developing interactive digital resources](ITMO-University/Developing-interactive-digital-resources)
 
 ### [Neurointerface](ITMO-University/Neurointerface)
