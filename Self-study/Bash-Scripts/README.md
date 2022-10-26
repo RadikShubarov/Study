@@ -1,4 +1,5 @@
 # TASKS:
+### [Change target substr to some string from all files in direct ](change_str.sh)
 
 ### [Find weekday by birthday](weekday_by_birthday.sh)
 
