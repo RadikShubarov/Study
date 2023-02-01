@@ -25,3 +25,5 @@
 ### [Data structures and algorithms](Self-study/Data-structures-and-algorithms)
 
 ### [Simple equalizer](Self-study/Simple-equalizer)
+
+### [Google Blogger Architectural Design](ITMO-University/Google_Blogger_Architectural_Design)
