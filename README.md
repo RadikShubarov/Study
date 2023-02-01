@@ -18,6 +18,8 @@
 
 ### [Google Blogger Architectural Design](ITMO-University/Google_Blogger_Architectural_Design)
 
+### [Information system engineering](ITMO-University/information_system_engineering)
+
 # Self study
 
 ### [DevOps practices](Self-study/DevOps)
