@@ -16,6 +16,8 @@
 
 ### [Neurointerface](ITMO-University/Neurointerface)
 
+### [Google Blogger Architectural Design](ITMO-University/Google_Blogger_Architectural_Design)
+
 # Self study
 
 ### [DevOps practices](Self-study/DevOps)
@@ -25,5 +27,3 @@
 ### [Data structures and algorithms](Self-study/Data-structures-and-algorithms)
 
 ### [Simple equalizer](Self-study/Simple-equalizer)
-
-### [Google Blogger Architectural Design](ITMO-University/Google_Blogger_Architectural_Design)
