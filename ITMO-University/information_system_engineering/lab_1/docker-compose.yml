@@ -1,0 +1,33 @@
+version: "2"
+
+services:
+
+  php:
+    build:
+      context: ./PHP/
+    volumes:
+      - './PHP:/var/www/html'
+    depends_on:
+      - mdb
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - './PHP:/var/www/html'
+      - './Nginx/core:/etc/nginx/conf.d'
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+        - php
+
+  mdb:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: apps
+      MYSQL_USER: user
+    ports:
+      - 3307:3306
+    volumes:
+      - './MySQL/apps.sql:/docker-entrypoint-initdb.d/apps.sql'
